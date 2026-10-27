@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olho no Phishing | Projeto educativo</title>
+<style>
+:root{--navy:#12304a;--blue:#1769aa;--light:#f3f7fb;--ink:#1e293b;--green:#16794b;--orange:#9a5b00;--border:#d8e2ec}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--ink);line-height:1.55}
+header{background:var(--navy);color:white;padding:26px 18px} .wrap{max-width:850px;margin:auto;padding:0 18px}
+header h1{margin:0 0 6px;font-size:1.8rem} header p{margin:0;color:#e3edf6}
+main{padding:28px 0 42px}.card{background:white;border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:18px;box-shadow:0 4px 16px #12304a0c}
+h2{margin-top:0;color:var(--navy)} .muted{color:#526579;font-size:.94rem}.btn{display:inline-block;border:0;border-radius:8px;padding:12px 17px;font-weight:700;cursor:pointer;text-decoration:none;margin:5px 6px 0 0}
+.primary{background:var(--blue);color:white}.secondary{background:#e8eef5;color:var(--navy)}.danger{background:#a83232;color:white}
+.notice{border-left:4px solid var(--blue);background:#edf6ff;padding:12px 15px;border-radius:5px}
+.mail{border:1px solid #cbd5e1;border-radius:10px;overflow:hidden}.mailtop{background:#eef2f7;padding:12px 16px;font-size:.92rem}.mailbody{padding:18px}.badge{display:inline-block;padding:3px 8px;border-radius:99px;background:#fff0d6;color:#7b4a00;font-size:.8rem;font-weight:bold}
+.hidden{display:none!important}.choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.choice{background:white;border:1px solid #9fb3c8;color:var(--navy);border-radius:8px;padding:12px 14px;cursor:pointer;font-weight:700}.choice:hover{background:#edf6ff}
+label{display:block;font-weight:700;margin:14px 0 6px}input,textarea,select{width:100%;padding:11px;border:1px solid #b8c7d6;border-radius:8px;font:inherit}textarea{min-height:95px}
+footer{padding:20px;text-align:center;color:#617286;font-size:.88rem}
+ul{padding-left:22px}.result{font-weight:700;color:var(--green)}.small{font-size:.85rem}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>Olho no Phishing</h1><p>Projeto educativo de conscientização sobre phishing e engenharia social</p></div></header>
+<main class="wrap">
+<section id="intro" class="card">
+<h2>Aprenda a reconhecer sinais de phishing</h2>
+<p>Phishing é uma tentativa de induzir alguém a clicar em links, abrir arquivos ou compartilhar informações. Esta atividade educativa apresenta um exemplo fictício para ajudar você a identificar sinais de alerta.</p>
+<div class="notice"><strong>Privacidade:</strong> esta versão de demonstração não pede senhas, não coleta credenciais e não envia seus dados a um servidor. Ela registra apenas a interação neste navegador, usando um código aleatório e data/hora local. Os registros podem ser exportados para análise do projeto.</div>
+<p>Ao continuar, você confirma que deseja participar voluntariamente desta demonstração educativa.</p>
+<button class="btn primary" id="startBtn">Começar a atividade</button>
+</section>
+
+<section id="simulation" class="card hidden">
+<h2>Etapa 1 — Analise a mensagem</h2>
+<p>Imagine que você recebeu a mensagem abaixo. Observe o remetente, o tom e o pedido feito.</p>
+<div class="mail">
+<div class="mailtop"><strong>De:</strong> Central de Avisos &lt;avisos-conta@example.invalid&gt;<br><strong>Assunto:</strong> Ação necessária: confirme sua conta hoje</div>
+<div class="mailbody">
+<p><span class="badge">EXEMPLO FICTÍCIO</span></p>
+<p>Olá, usuário.</p>
+<p>Detectamos uma atividade incomum. Para evitar uma suposta suspensão, confirme seus dados pelo botão abaixo ainda hoje.</p>
+<p><button class="btn secondary" id="fakeLink" type="button">Verificar minha conta</button></p>
+<p class="muted small">Esta mensagem foi criada exclusivamente para fins educativos. O botão não abre um site externo.</p>
+</div></div>
+<p><strong>Na sua avaliação, o que você faria?</strong></p>
+<div class="choices">
+<button class="choice" data-answer="clicaria">Clicaria imediatamente</button>
+<button class="choice" data-answer="verificaria">Verificaria o remetente por um canal oficial</button>
+<button class="choice" data-answer="reportaria">Não clicaria e reportaria como suspeita</button>
+</div>
+<p id="feedback" class="notice hidden" role="status"></p>
+<button class="btn primary hidden" id="learnBtn">Ver orientações de segurança</button>
+</section>
+
+<section id="learning" class="card hidden">
+<h2>Etapa 2 — Como reconhecer o phishing</h2>
+<p>Mensagens fraudulentas frequentemente tentam provocar pressa, medo ou curiosidade. Antes de clicar, confira:</p>
+<ul>
+<li><strong>Remetente e domínio:</strong> confira o endereço completo e procure diferenças suspeitas.</li>
+<li><strong>Urgência e ameaças:</strong> desconfie de prazos artificiais, bloqueios ou consequências imediatas.</li>
+<li><strong>Links:</strong> verifique o destino antes de abrir; prefira acessar o serviço digitando o endereço oficial.</li>
+<li><strong>Pedido de dados:</strong> não informe senhas, códigos de autenticação ou dados financeiros por links recebidos inesperadamente.</li>
+<li><strong>Confirmação independente:</strong> fale com a organização por um canal oficial já conhecido.</li>
+<li><strong>Reporte:</strong> encaminhe mensagens suspeitas ao suporte ou à equipe de segurança responsável.</li>
+</ul>
+<div class="notice"><strong>Regra prática:</strong> pare, confira e confirme por outro canal. Não use o link da mensagem suspeita para verificar se ela é verdadeira.</div>
+<button class="btn primary" id="feedbackBtn">Responder ao feedback</button>
+</section>
+
+<section id="survey" class="card hidden">
+<h2>Etapa 3 — Feedback voluntário</h2>
+<p>Não informe nome, e-mail, telefone ou qualquer dado pessoal. Suas respostas servem para avaliar a clareza do material.</p>
+<form id="surveyForm">
+<label for="understood">Depois desta atividade, você se sente mais preparado(a) para reconhecer phishing?</label>
+<select id="understood" required><option value="">Selecione</option><option>Sim</option><option>Em parte</option><option>Não</option></select>
+<label for="warning">Qual sinal de alerta você considera mais importante?</label>
+<select id="warning" required><option value="">Selecione</option><option>Remetente ou domínio suspeito</option><option>Urgência ou ameaça</option><option>Link inesperado</option><option>Pedido de senha ou código</option><option>Confirmar por canal oficial</option></select>
+<label for="comment">Comentário opcional (não inclua dados pessoais)</label>
+<textarea id="comment" maxlength="500" placeholder="O que foi útil ou poderia melhorar?"></textarea>
+<button class="btn primary" type="submit">Salvar feedback neste navegador</button>
+</form>
+<p id="surveyDone" class="notice hidden" role="status"></p>
+</section>
+
+<section class="card">
+<h2>Área do responsável pelo projeto</h2>
+<p class="muted">Demonstração técnica: os registros ficam somente neste navegador. Para reunir resultados de participantes diferentes pela internet, será necessário conectar a aplicação a um serviço de formulário ou backend seguro antes da aplicação real.</p>
+<button class="btn secondary" id="exportBtn">Exportar registros CSV</button>
+<button class="btn secondary" id="viewBtn">Ver quantidade de registros</button>
+<button class="btn danger" id="clearBtn">Apagar registros locais</button>
+<p id="adminStatus" class="muted" role="status"></p>
+</section>
+</main>
+<footer>Projeto acadêmico de conscientização digital · Simulação fictícia · Não coleta credenciais</footer>
+<script>
+const $ = id => document.getElementById(id);
+const storeKey = 'olhoPhishingRecordsV1';
+const endpointRegistro = 'https://script.google.com/macros/s/AKfycbwA_QR-MhZbvpfuu8oRBn5zTFiJknEhRgF4rTcr4rvVX7LVXt35ib3x3sm64Wi4HQ-O/exec';
+let participantId = null;
+let sessionStart = null;
+function records(){try{return JSON.parse(localStorage.getItem(storeKey)||'[]')}catch(e){return []}}
+function saveRecord(event, extra={}) {
+  const registro = {
+    participant_id: participantId || 'anon-' + crypto.randomUUID(),
+    event,
+    timestamp: new Date().toISOString(),
+    ...extra
+  };
+  const data = records();
+  data.push(registro);
+  localStorage.setItem(storeKey, JSON.stringify(data));
+
+  // Envia como formulário simples para evitar preflight CORS.
+  // O Apps Script precisa aceitar e.parameter.payload.
+  const body = new URLSearchParams({payload: JSON.stringify(registro)});
+  fetch(endpointRegistro, {
+    method: 'POST',
+    mode: 'no-cors',
+    body
+  }).catch(() => {
+    // Mantém o registro local caso não haja conexão.
+    console.warn('Não foi possível enviar o registro ao serviço remoto.');
+  });
+}
+function show(id){$(id).classList.remove('hidden')}
+function hide(id){$(id).classList.add('hidden')}
+$('startBtn').addEventListener('click',()=>{
+  participantId='anon-'+crypto.randomUUID(); sessionStart=new Date().toISOString();
+  saveRecord('atividade_iniciada');
+  hide('intro'); show('simulation');
+});
+document.querySelectorAll('[data-answer]').forEach(btn=>btn.addEventListener('click',()=>{
+  const answer=btn.dataset.answer;
+  saveRecord('resposta_simulacao',{answer});
+  $('feedback').textContent = answer==='clicaria'
+   ? 'Atenção: clicar sem verificar é arriscado. Mensagens urgentes podem ser usadas para pressionar a vítima.'
+   : answer==='verificaria'
+   ? 'Boa prática: confirme a solicitação por um canal oficial e independente antes de agir.'
+   : 'Boa prática: não clique e reporte a mensagem pelos canais adequados.';
+  show('feedback'); show('learnBtn');
+}));
+$('fakeLink').addEventListener('click',()=>{saveRecord('botao_ficticio_clicado');$('feedback').textContent='Você interagiu com um botão de demonstração. Em situações reais, não clique antes de verificar o remetente e o destino do link.';show('feedback');show('learnBtn')});
+$('learnBtn').addEventListener('click',()=>{saveRecord('material_educativo_aberto');hide('simulation');show('learning')});
+$('feedbackBtn').addEventListener('click',()=>{saveRecord('formulario_feedback_aberto');hide('learning');show('survey')});
+$('surveyForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  saveRecord('feedback_enviado',{preparedness:$('understood').value,most_important_warning:$('warning').value,comment:$('comment').value.trim()});
+  $('surveyDone').textContent='Obrigado! Seu feedback foi salvo apenas neste navegador. Para a aplicação real, os dados precisarão ser enviados a um local seguro e centralizado.';
+  show('surveyDone'); $('surveyForm').reset();
+});
+$('exportBtn').addEventListener('click',()=>{
+  const data=records(); if(!data.length){$('adminStatus').textContent='Ainda não há registros neste navegador.';return}
+  const cols=['participant_id','event','timestamp','answer','preparedness','most_important_warning','comment'];
+  const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';
+  const csv=[cols.join(','),...data.map(r=>cols.map(c=>esc(r[c])).join(','))].join('\r\n');
+  const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='registros_olho_no_phishing.csv';a.click();URL.revokeObjectURL(a.href);
+  $('adminStatus').textContent=`Exportação iniciada: ${data.length} registros locais.`;
+});
+$('viewBtn').addEventListener('click',()=>{$('adminStatus').textContent=`Registros armazenados neste navegador: ${records().length}.`});
+$('clearBtn').addEventListener('click',()=>{if(confirm('Apagar todos os registros armazenados neste navegador?')){localStorage.removeItem(storeKey);$('adminStatus').textContent='Registros locais apagados.'}});
+</script>
+</body>
+</html>
