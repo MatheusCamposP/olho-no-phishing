@@ -1,0 +1,13 @@
+Links de Atalhos:
+
+Video de Apresentação do Projeto:
+https://drive.google.com/file/d/1fXrGXnGiKEZsPAmxPOQJN7nStHvVIanG/view?usp=sharing
+
+Código-fonte:
+https://github.com/MatheusCamposP/olho-no-phishing/blob/main/index.html
+
+Registros e Logs:
+https://docs.google.com/spreadsheets/d/18ee0puQFwNxnUyfnbfCAUz65vG0wy1NM4NTC5TetTyE/edit
+
+Repositorio GITHUB:
+https://github.com/MatheusCamposP/olho-no-phishing
